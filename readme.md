@@ -18,6 +18,11 @@ You can register a provider on the application object of storagestack.
 ss.registerProvider(new MemoryProvider());
 ```
 
+Or when you want to use a pattern ...
+```typescript
+ss.registerProvider(new MemoryProvider(), '*-index.json');
+```
+
 Take a look in the core library to the provider interface.
 
 ### Middleware
