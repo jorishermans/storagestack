@@ -22,7 +22,7 @@ export class LocalStorageProvider implements Provider {
     }
 
     delete(name: string, options?: Object): Promise<void> {
-        return this.ipfs.files.rm('/my/beautiful/file.txt', options ? options : { recursive: true }, (err) => {
+        return this.ipfs.files.rm(name, options ? options : { recursive: true }, (err) => {
             return Promise.reject(err);
         });
     }
