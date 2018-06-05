@@ -20,5 +20,11 @@
     "blockstack": "^17.2.0"
   },
   "author": "Joris Hermans",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "ts-loader": "^4.3.1",
+    "typescript": "^2.9.1",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.2"
+  }
 }

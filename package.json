@@ -1,8 +1,5 @@
 {
 	"devDependencies": {
 		"lerna": "^2.9.1"
-	},
-	"dependencies": {
-		"blockstack": "^17.2.0"
 	}
 }

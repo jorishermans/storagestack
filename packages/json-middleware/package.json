@@ -19,5 +19,8 @@
     "@storagestack/core": "1.0.0"
   },
   "author": "Joris Hermans",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.10.2"
+  }
 }

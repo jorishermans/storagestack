@@ -21,5 +21,8 @@
     "ipfs-js": "0.0.11"
   },
   "author": "Joris Hermans",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.10.2"
+  }
 }

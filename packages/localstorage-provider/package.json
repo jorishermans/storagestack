@@ -19,5 +19,8 @@
     "localforage": "^1.7.1"
   },
   "author": "Joris Hermans",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^4.10.2"
+  }
 }
