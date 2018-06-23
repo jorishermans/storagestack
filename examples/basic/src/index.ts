@@ -1,0 +1,1 @@
+import { ss } from '@storagestack/core';

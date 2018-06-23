@@ -4,5 +4,12 @@
     "packages/*",
     "examples/*"
   ],
+  "commands": {
+    "publish": {
+      "ignore": [
+        "examples/*"
+      ]
+    }
+  },
   "version": "0.0.0"
 }
