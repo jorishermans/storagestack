@@ -2,7 +2,7 @@
   "name": "@storagestack/json-middleware",
   "version": "1.0.0",
   "description": "To transform the data to json and from json in storage stack",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "jest",
     "compile": "webpack",
