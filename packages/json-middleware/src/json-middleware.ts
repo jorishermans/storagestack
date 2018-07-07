@@ -1,6 +1,6 @@
 import { MiddlewareStack, StorageInfo } from '@storagestack/core';
 
-class JsonMiddleware implements MiddlewareStack {
+export class JsonMiddleware implements MiddlewareStack {
 
     set(storageInfo: StorageInfo, next: () => void) {
         storageInfo.content = JSON.stringify(storageInfo.content);

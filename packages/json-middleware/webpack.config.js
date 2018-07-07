@@ -7,7 +7,7 @@ module.exports = {
         extensions:  ['.webpack.js',  '.web.js', '.json',  '.ts',  '.tsx',  '.js']
     },
     module: {
-        loaders: [
+        rules: [
             { test: /\.tsx?$/, loader: 'ts-loader' },
         ]
     },
@@ -16,7 +16,7 @@ module.exports = {
     ],
     output: {
         path: __dirname,
-        filename: "index.js",
+        filename: "./dist/index.js",
         libraryTarget: "umd"
     }
 };
