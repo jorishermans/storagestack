@@ -1,7 +1,7 @@
 import { Provider } from '@storagestack/core';
 import * as Buffer from 'Buffer';
 
-export class LocalStorageProvider implements Provider {
+export class IpfsProvider implements Provider {
 
     constructor(private ipfs) { }
 
