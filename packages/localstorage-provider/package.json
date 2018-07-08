@@ -21,6 +21,8 @@
   "author": "Joris Hermans",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^4.10.2"
+    "ts-loader": "^4.4.2",
+    "webpack": "^4.10.2",
+    "webpack-cli": "^3.0.8"
   }
 }
