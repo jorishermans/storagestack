@@ -5,7 +5,7 @@ import * as minimatch from 'minimatch';
 
 interface PatternProvider {
     pattern: string;
-    provider: Provider;
+    provider: Provider<any>;
 }
 
 export class Application {
@@ -25,7 +25,7 @@ export class Application {
         this._deleteMiddleware = new MiddlewareHolder();
     }
 
-    public registerProvider(provider: Provider, pattern: string = '*') {
+    public registerProvider(provider: Provider<any>, pattern: string = '*') {
         this._providers.push({provider: provider, pattern: pattern});
     }
 
@@ -46,13 +46,17 @@ export class Application {
         }
     }
 
-    set(name: string, content: string, options?: Object) {
+    set(name: string, content: any, options?: Object): Promise<void> {
+        let promise;
         this._setMiddleware.go({origin: content, content: content, name: name, options: options}, (storageInfo: StorageInfo) => {
             // apply this to the providers
+            let promises: Promise<void>[] = [];
             this.mapProvidersByName(name).forEach(p => {
-                if (p) p.set(name, storageInfo.content, storageInfo.options);
+                if (p) promises.push(p.set(name, storageInfo.content, storageInfo.options));
             });
+            promise = Promise.all(promises);
         });
+        return promise;
     }
 
     get(name: string, fn: (StorageInfo) => void, options?: Object) {
@@ -75,7 +79,7 @@ export class Application {
         }
     }
 
-    private last(list): Provider {
+    private last(list): Provider<any> {
         return list[list.length - 1];
     }
 

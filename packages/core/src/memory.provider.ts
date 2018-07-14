@@ -1,23 +1,23 @@
 import { Provider } from './provider';
 
-export class MemoryProvider implements Provider {
+export class MemoryProvider<T> implements Provider<T> {
     
-    private memory: { [path: string]: string };
+    private memory: { [path: string]: T };
 
-    constructor(memory?: { [path: string]: string }) {
+    constructor(memory?: { [path: string]: T }) {
         this.memory = {};
         if (memory) {
             this.memory = memory;
         }
     }
 
-    set(name: string, content: string, options?: Object): Promise<void> {
+    set(name: string, content: T, options?: Object): Promise<void> {
         this.memory[name] = content;
         return Promise.resolve();
     }
 
-    get(name: string, options?: Object): Promise<string> {
-        const p = new Promise<string>((resolve) => {
+    get(name: string, options?: Object): Promise<T> {
+        const p = new Promise<T>((resolve) => {
             resolve(this.memory[name]);
         });
         return p;

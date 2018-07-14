@@ -1,7 +1,7 @@
 import { Provider } from '@storagestack/core';
 import * as localforage from "localforage";
 
-export class LocalStorageProvider implements Provider {
+export class LocalStorageProvider implements Provider<string> {
 
     constructor() { }
 

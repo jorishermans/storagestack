@@ -1,6 +1,6 @@
 import { Provider } from '@storagestack/core';
 
-export class BlockstackProvider implements Provider {
+export class BlockstackProvider implements Provider<string> {
 
     constructor(private blockstack) {  }
 

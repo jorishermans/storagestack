@@ -1,17 +1,17 @@
 import { Provider } from '@storagestack/core';
 import * as Buffer from 'Buffer';
 
-export class IpfsProvider implements Provider {
+export class IpfsProvider<T> implements Provider<T> {
 
     constructor(private ipfs) { }
 
-    set(name: string, content: string, options?: Object): Promise<void> {
+    set(name: string, content: T, options?: Object): Promise<void> {
         return this.ipfs.files.write(name, Buffer.from(content), options ? options : { offset: 0, create: true }, (err) => {
             return Promise.reject(err);
         });
     }
 
-    get(name: string, options?: Object): Promise<string> {
+    get(name: string, options?: Object): Promise<T> {
         return this.ipfs.files.read(name, options ? options : { offset: 0 }, (err, buf) => {
             if (err) {
                 return Promise.reject(err);
