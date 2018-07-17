@@ -1,5 +1,5 @@
 import { Provider } from '@storagestack/core';
-import * as Buffer from 'Buffer';
+import { Buffer } from 'buffer/';
 
 export class IpfsProvider<T> implements Provider<T> {
 

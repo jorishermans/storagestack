@@ -1,8 +1,8 @@
 {
-  "name": "@storagestack/ipfs-provider",
+  "name": "@example/ipfs",
   "version": "1.0.0",
-  "description": "IPFS implementation as a storage provider for storage stack",
-  "main": "dist/index.js",
+  "description": "ipfs example implementation and usage of storage stack",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "compile": "webpack",
@@ -10,14 +10,14 @@
     "tslint": "tslint --project src/tsconfig.json"
   },
   "keywords": [
-    "ipfs",
+    "localstorage",
     "storage",
-    "provider",
-    "blockchain"
+    "provider"
   ],
   "dependencies": {
     "@storagestack/core": "1.0.0",
-    "buffer": "^5.1.0",
+    "@storagestack/json-middleware": "1.0.0",
+    "@storagestack/ipfs-provider": "1.0.0",
     "ipfs": "0.30.0"
   },
   "author": "Joris Hermans",
