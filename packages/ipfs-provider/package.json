@@ -17,7 +17,9 @@
   ],
   "dependencies": {
     "@storagestack/core": "1.0.0",
+    "@types/buffers": "^0.1.31",
     "buffer": "^5.1.0",
+    "buffers": "^0.1.1",
     "ipfs": "0.30.0"
   },
   "author": "Joris Hermans",
