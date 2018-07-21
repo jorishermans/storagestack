@@ -7,22 +7,25 @@ export class IpfsProvider<T> implements Provider<T> {
 
     set(name: string, content: T, options?: Object): Promise<void> {
         if (!name.startsWith('/')) name = `/${name}`;
-        console.log(name);
-        return this.ipfs.files.write(name, Buffer.from(content), options ? options : { offset: 0, create: true }, (err) => {
-            return err? Promise.reject(err) : Promise.resolve();
+        return new Promise((resolve, reject) => {
+            this.ipfs.files.write(name, Buffer.from(content), options ? options : { offset: 0, create: true }, (err) => {
+                if (err) reject(err)
+                else resolve();
+            });
         });
     }
 
     get(name: string, options?: Object): Promise<T> {
         if (!name.startsWith('/')) name = `/${name}`;
-        console.log(name);
-        return this.ipfs.files.read(name, options ? options : { offset: 0 }, (err, buf) => {
-            if (err) {
-                return Promise.reject(err);
-            } else {
-                return Promise.resolve(buf.toString('utf8'));
-            }
-        })
+        return new Promise((resolve, reject) => {
+            this.ipfs.files.read(name, options ? options : { offset: 0 }, (err, buf) => {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(buf.toString('utf8'));
+                }
+            })
+        });
     }
 
     delete(name: string, options?: Object): Promise<void> {
