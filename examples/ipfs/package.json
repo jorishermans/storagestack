@@ -15,9 +15,9 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "1.0.0",
-    "@storagestack/json-middleware": "1.0.0",
-    "@storagestack/ipfs-provider": "1.0.0",
+    "@storagestack/core": "0.1.0",
+    "@storagestack/json-middleware": "0.1.0",
+    "@storagestack/ipfs-provider": "0.1.0",
     "ipfs": "0.30.0"
   },
   "author": "Joris Hermans",
