@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/ipfs-provider",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "IPFS implementation as a storage provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "0.1.0",
+    "@storagestack/core": "^0.1.1",
     "ipfs": "0.30.0"
   },
   "author": "Joris Hermans",

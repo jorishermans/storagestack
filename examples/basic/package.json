@@ -1,6 +1,6 @@
 {
   "name": "@example/basic",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "description": "basic implementation and usage of storage stack",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "0.1.0",
-    "@storagestack/json-middleware": "0.1.0",
-    "@storagestack/localstorage-provider": "0.1.0"
+    "@storagestack/core": "^0.1.1",
+    "@storagestack/json-middleware": "^0.1.1",
+    "@storagestack/localstorage-provider": "^0.1.1"
   },
   "author": "Joris Hermans",
   "license": "ISC",
