@@ -1,21 +1,34 @@
 import { Provider } from '@storagestack/core';
-import { Buffer } from 'buffer/';
 
-export class IpfsProvider<T> implements Provider<T> {
+export class IpfsProvider implements Provider<String> {
 
     constructor(private ipfs) { }
 
-    set(name: string, content: T, options?: Object): Promise<void> {
+    set(name: string, content: string, options?: Object): Promise<void> {
+        return this.write(name, content, options).then(_ => {
+            return this.get(name, undefined).then(x => {
+                if ( x.length > content.length ) {
+                    // content is not the same
+                    let size = x.length - content.length;
+                    let str = content + new Array(size + 1).join(' ');
+                    // rewrite new str
+                    return this.write(name, str, {... options, length: x.length});
+                }
+            })
+        })
+    }
+
+    private write(name: string, content: string, options?: Object): Promise<void> {
         if (!name.startsWith('/')) name = `/${name}`;
-        return new Promise((resolve, reject) => {
-            this.ipfs.files.write(name, Buffer.from(content), options ? options : { offset: 0, create: true }, (err) => {
-                if (err) reject(err)
-                else resolve();
-            });
+        return new Promise((resolve, reject) => { 
+                this.ipfs.files.write(name, this.ipfs.types.Buffer.from(content, 'utf8'), options ? options : { offset: 0, create: true }, (err) => {
+                    if (err) reject(err)
+                    else resolve();
+                });
         });
     }
 
-    get(name: string, options?: Object): Promise<T> {
+    get(name: string, options?: Object): Promise<string> {
         if (!name.startsWith('/')) name = `/${name}`;
         return new Promise((resolve, reject) => {
             this.ipfs.files.read(name, options ? options : { offset: 0 }, (err, buf) => {

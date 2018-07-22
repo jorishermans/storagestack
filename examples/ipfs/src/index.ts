@@ -17,7 +17,8 @@ document.getElementById("save")!.addEventListener("click", function ()
 {
     var value = (<HTMLInputElement>document.getElementById("textArea")!).value;
     var obj = { value: value, createdBy: new Date()};
-    ss.set('text', obj);
-    console.log("save value", value);
-    ss.get('text', (storageInfo) => console.log(storageInfo));
+    ss.set('objtext', obj).then(_ => {
+        console.log("save value", value);
+        ss.get('objtext', (storageInfo) => console.log(storageInfo));
+    });
 } , false);
