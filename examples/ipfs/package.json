@@ -1,6 +1,6 @@
 {
   "name": "@example/ipfs",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "ipfs example implementation and usage of storage stack",
   "main": "index.js",
   "scripts": {
@@ -15,9 +15,9 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.1.1",
+    "@storagestack/core": "^0.1.2",
     "@storagestack/ipfs-provider": "0.1.0",
-    "@storagestack/json-middleware": "^0.1.1",
+    "@storagestack/json-middleware": "^0.1.2",
     "ipfs": "0.30.0"
   },
   "author": "Joris Hermans",
