@@ -1,4 +1,4 @@
-## StorageStack
+## StorageStack Core
 
 With storagestack you can use middleware to control the flow of storing data into a storage system.
 
