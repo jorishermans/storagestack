@@ -37,6 +37,7 @@ ss.use('*', new UpperMiddleware());
 When you want to create your own middleware you can just implement the 'MiddlewareStack' interface.
 
 An example of a middleware implementation that has a counter and transforms the content to uppercase when it is been set.
+
 ```typescript
 class UpperMiddleware implements MiddlewareStack {
     count = 1;

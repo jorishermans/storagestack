@@ -1,4 +1,4 @@
-### IPFS provider
+### Localstorage provider
 
 This is the implementation for the localstorage provider, so if you want to save files to localstorage you can do that with this package.
 

@@ -1,6 +1,6 @@
 # Blockstack provider
 
-This is the implementation of blockstack within storage stack.
+This is the implementation of a blockstack provider within storage stack.
 
 ### Provider
 

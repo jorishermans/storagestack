@@ -1,6 +1,6 @@
 # JSON middleware
 
-The JSON middleware transforms the content to a string so it can be saved and will then parse it to JSON when you do a get for the content.
+The JSON middleware helps you in saving the content into the peer to peer distributed storage system as a json string.
 
 ### Middleware
 
