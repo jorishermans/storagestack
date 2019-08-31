@@ -1,15 +1,14 @@
 {
-  "lerna": "2.9.1",
   "packages": [
     "packages/*",
     "examples/*"
   ],
-  "commands": {
+  "version": "0.1.5",
+  "command": {
     "publish": {
-      "ignore": [
+      "ignoreChanges": [
         "examples/*"
       ]
     }
-  },
-  "version": "0.1.5"
+  }
 }

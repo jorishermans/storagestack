@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.1.5",
-    "@storagestack/ipfs-provider": "0.1.0",
+    "@storagestack/ipfs-provider": "0.1.5",
     "@storagestack/json-middleware": "^0.1.5",
     "ipfs": "0.30.0"
   },

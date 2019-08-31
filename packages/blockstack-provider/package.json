@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.1.5",
-    "blockstack": "^17.2.0"
+    "blockstack": "^19.3.0"
   },
   "author": "Joris Hermans",
   "license": "ISC",
