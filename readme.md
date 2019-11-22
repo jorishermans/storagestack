@@ -25,6 +25,12 @@ ss.registerProvider(new MemoryProvider(), '*-index.json');
 
 Take a look in the core library to the provider interface.
 
+We have implementations for:
+- Blockstack
+- IPFS
+- Localstorage
+- Memory
+
 ### Middleware
 
 You will have also an ability to define middleware to transform your storage content to the content you want for your application.
