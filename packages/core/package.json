@@ -19,17 +19,13 @@
   "dependencies": {
     "core-js": "^2.5.5",
     "es6-promise": "^4.2.4",
-    "minimatch": "^3.0.4",
-    "route-parser": "0.0.5",
-    "url-pattern": "^1.0.3"
+    "minimatch": "^3.0.4"
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.20",
     "@types/core-js": "^0.9.46",
     "@types/jest": "^22.2.3",
-    "awesome-typescript-loader": "^4.0.1",
     "jest": "^22.4.3",
-    "lerna": "^2.9.1",
     "source-map-loader": "^0.2.3",
     "ts-jest": "^22.4.2",
     "ts-loader": "^4.3.0",
