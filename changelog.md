@@ -1,3 +1,8 @@
+## [0.3.0] - 2019-11-23
+
+- add removeProvider, so you can easily remove a storage provider when needed
+- use promises for set & delete instead of callbacks
+
 ## [0.2.0] - 2019-11-23
 
 - add secure-ls to localstorage packages

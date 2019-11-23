@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.2.0",
-    "ipfs": "0.30.0"
+    "ipfs": "0.39.0"
   },
   "author": "Joris Hermans",
   "license": "ISC",

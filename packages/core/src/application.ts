@@ -30,6 +30,10 @@ export class Application {
         this._providers.push({provider: provider, pattern: pattern});
     }
 
+    public removeProvider(provider: Provider<any>) {
+        this._providers = this._providers.filter(x => x.provider !== provider);
+    }
+
     public use(pattern: string, middleware: MiddlewareStack) {
         // route.match('/my/fancy/route/page/7')
         this._middleware.push(middleware);
@@ -60,7 +64,15 @@ export class Application {
         return promise;
     }
 
-    get(name: string, fn: (arg0: StorageInfo) => void, options?: Object) {
+    get(name: string, options?: Object): Promise<StorageInfo> {
+        return new Promise((resolve, reject) => {
+            this._get(name, (storageInfo: StorageInfo) => {
+                resolve(storageInfo);
+            }, options);
+        });
+    }
+
+    private _get(name: string, fn: (arg0: StorageInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).get(name, options).then(s => {
@@ -71,11 +83,19 @@ export class Application {
         }
     }
 
-    delete(name: string, fn?: (arg0: BasicInfo) => void, options?: Object) {
+    delete(name: string, options?: Object): Promise<BasicInfo> {
+        return new Promise((resolve, reject) => {
+            this._delete(name, (b: BasicInfo) => {
+                resolve(b);
+            }, options);
+        });
+    }
+
+    private _delete(name: string, fn: (arg0: BasicInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).delete(name, options).then(s => {
-                this._deleteMiddleware.go({name: name, options: options}, fn ? fn : (ss) => {});
+                this._deleteMiddleware.go({name: name, options: options}, fn);
             });
         }
     }
