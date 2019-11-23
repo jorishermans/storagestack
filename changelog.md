@@ -1,4 +1,4 @@
-## [2.0.0] - 2019-11-23
+## [0.2.0] - 2019-11-23
 
 - add secure-ls to localstorage packages
 - update typescript versions in all packages
