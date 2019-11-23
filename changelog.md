@@ -1,3 +1,7 @@
+## [0.4.1] - 2019-11-23
+
+- change type of content from string to any in StorageInfo
+
 ## [0.4.0] - 2019-11-23
 
 - use correct code with dist

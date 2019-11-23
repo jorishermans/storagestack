@@ -6,7 +6,7 @@ export class LocalStorageProvider implements Provider<string> {
 
     private storage = new SecureLS();
 
-    constructor(options?: LocalForageOptions) { 
+    constructor(options?: any) { 
         localforage.config(options || {
             driver      : localforage.LOCALSTORAGE,
             name        : 'StorageStack',
