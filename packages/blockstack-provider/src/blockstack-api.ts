@@ -17,7 +17,6 @@ export class BlockStackApi {
             const person = new Person(userData.profile);
             const username = userData.username;
             this.user = { person, username };
-            // context.root.$router.push('dashboard');
         } else if (session.isSignInPending()) {
             session.handlePendingSignIn()
                 .then((x: any) => {

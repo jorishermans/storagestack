@@ -13,8 +13,8 @@ export class LocalStorageProvider implements Provider<string> {
         });
     }
 
-    set(name: string, content: string, options?: Object): Promise<void> {
-        return localforage.setItem(name, content).then(s => Promise.resolve());
+    set(name: string, content: string, options?: Object): Promise<string> {
+        return localforage.setItem(name, content);
     }
 
     get(name: string, options?: Object): Promise<string> {

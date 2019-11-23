@@ -7,7 +7,7 @@
         "module": "commonjs",            // specify module code generation
         "target": "es5",            // specify ECMAScript target version
         "lib": [
-            "es2016"
+            "es2016", "dom", "dom.iterable"
         ]
     },
     "include": [

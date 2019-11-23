@@ -23,8 +23,8 @@ export class MemoryProvider<T> implements Provider<T> {
         return p;
     }
 
-    delete(name: string, options?: Object): Promise<string> {
+    delete(name: string, options?: Object): Promise<void> {
         delete this.memory[name];
-        return Promise.resolve('');
+        return Promise.resolve();
     }
 }

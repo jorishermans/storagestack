@@ -1,3 +1,4 @@
+declare var require;
 import { Provider } from "./provider";
 import { MiddlewareStack } from "./middleware-stack";
 import { MiddlewareHolder, StorageInfo, BasicInfo } from "./middleware-holder";
