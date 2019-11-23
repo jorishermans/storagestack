@@ -28,6 +28,9 @@
     "webpack": "^4.4.1",
     "webpack-cli": "^3.3.10"
   },
+  "files": [
+    "dist"
+  ],
   "publishConfig": {
     "access": "public"
   }
