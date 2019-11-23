@@ -1,3 +1,7 @@
+## [0.4.2] - 2019-11-23
+
+- remove localforage as dependency
+
 ## [0.4.1] - 2019-11-23
 
 - change type of content from string to any in StorageInfo

@@ -16,7 +16,6 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.4.1",
-    "localforage": "^1.7.1",
     "secure-ls": "^1.2.5"
   },
   "author": "Joris Hermans",
