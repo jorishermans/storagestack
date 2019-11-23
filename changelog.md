@@ -1,3 +1,7 @@
+## [0.4.0] - 2019-11-23
+
+- use correct code with dist
+
 ## [0.3.0] - 2019-11-23
 
 - add removeProvider, so you can easily remove a storage provider when needed
