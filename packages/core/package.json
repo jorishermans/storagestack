@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "compile": "webpack",
-    "compile-test": "webpack --config webpack.config.test.js",
     "tslint": "tslint --project src/tsconfig.json"
   },
   "keywords": [

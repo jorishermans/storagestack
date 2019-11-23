@@ -1,7 +1,7 @@
 import { Provider } from "./provider";
 import { MiddlewareStack } from "./middleware-stack";
 import { MiddlewareHolder, StorageInfo, BasicInfo } from "./middleware-holder";
-import * as minimatch from 'minimatch';
+const minimatch = require("minimatch");
 
 interface PatternProvider {
     pattern: string;
@@ -32,9 +32,9 @@ export class Application {
     public use(pattern: string, middleware: MiddlewareStack) {
         // route.match('/my/fancy/route/page/7')
         this._middleware.push(middleware);
-        this._setMiddleware.use((si: StorageInfo, next) => this.checkRoute(pattern, si, next, (si, next) => middleware.set(si, next)));
-        this._getMiddleware.use((si: StorageInfo, next) => this.checkRoute(pattern, si, next, (si, next) => middleware.get(si, next)));
-        this._deleteMiddleware.use((bi: BasicInfo, next) => this.checkRoute(pattern, bi, next, (bi, next) => middleware.delete ? middleware.delete(bi, next) : next()));
+        this._setMiddleware.use((si: StorageInfo, next: () => void) => this.checkRoute(pattern, si, next, (si, next) => middleware.set(si, next)));
+        this._getMiddleware.use((si: StorageInfo, next: () => void) => this.checkRoute(pattern, si, next, (si, next) => middleware.get(si, next)));
+        this._deleteMiddleware.use((bi: BasicInfo, next: () => void) => this.checkRoute(pattern, bi, next, (bi, next) => middleware.delete ? middleware.delete(bi, next) : next()));
     }
 
     private checkRoute(pattern: string, basicInfo: BasicInfo, next: () => void, fn: (BasicInfo, Function) => void) {
@@ -50,7 +50,7 @@ export class Application {
         let promise;
         this._setMiddleware.go({origin: content, content: content, name: name, options: options}, (storageInfo: StorageInfo) => {
             // apply this to the providers
-            let promises: Promise<void>[] = [];
+            let promises: Promise<string>[] = [];
             this.mapProvidersByName(name).forEach(p => {
                 if (p) promises.push(p.set(name, storageInfo.content, storageInfo.options));
             });
@@ -59,7 +59,7 @@ export class Application {
         return promise;
     }
 
-    get(name: string, fn: (StorageInfo) => void, options?: Object) {
+    get(name: string, fn: (arg0: StorageInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).get(name, options).then(s => {
@@ -70,7 +70,7 @@ export class Application {
         }
     }
 
-    delete(name: string, fn?: (BasicInfo) => void, options?: Object) {
+    delete(name: string, fn?: (arg0: BasicInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).delete(name, options).then(s => {
@@ -83,7 +83,7 @@ export class Application {
         return list[list.length - 1];
     }
 
-    private mapProvidersByName(name: String) {
+    private mapProvidersByName(name: string) {
         return this._providers.map(p => {
             let isMatch = minimatch(name, p.pattern);
             if (isMatch) {

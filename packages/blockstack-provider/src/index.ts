@@ -1,16 +1,19 @@
 import { Provider } from '@storagestack/core';
+import { BlockStackApi } from './blockstack-api';
 
 export class BlockstackProvider implements Provider<string> {
 
-    constructor(private blockstack) {  }
+    private blockStackApi: BlockStackApi;
 
-    set(name: string, content: string, options: Object): Promise<void> {
-        return this.blockstack.putFile(name, content, {});
+    constructor(private blockstackApi: BlockStackApi) {  }
+
+    set(name: string, content: string, options: Object): Promise<string> {
+        return this.blockStackApi.putFile(name, content, options);
     }
     get(name: string, options: Object): Promise<string> {
-        return this.blockstack.getFile(name, {});
+        return this.blockStackApi.getFile(name, options);
     }
     delete(name: string, options: Object): Promise<void> {
-        return this.blockstack.putFile(name, '', {});
+        return this.blockStackApi.deleteFile(name);
     }
 }
