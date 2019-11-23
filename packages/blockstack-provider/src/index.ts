@@ -1,19 +1,36 @@
 import { Provider } from '@storagestack/core';
-import { BlockStackApi } from './blockstack-api';
+import { UserSession } from 'blockstack';
 
 export class BlockstackProvider implements Provider<string> {
 
-    private blockStackApi: BlockStackApi;
+    constructor(private userSession: UserSession) {  }
 
-    constructor(private blockstackApi: BlockStackApi) {  }
-
-    set(name: string, content: string, options: Object): Promise<string> {
-        return this.blockStackApi.putFile(name, content, options);
+    set(name: string, content: string, options?: any): Promise<string> {
+        if (this.userSession.isUserSignedIn()) {
+            return this.userSession.putFile(name, content, options);
+        } else {
+            return Promise.resolve('');
+        }
     }
-    get(name: string, options: Object): Promise<string> {
-        return this.blockStackApi.getFile(name, options);
+    async get(name: string, options?: any): Promise<string> {
+        if (this.userSession.isUserSignedIn()) {
+            const s = await this.userSession.getFile(name, options);
+            if (typeof s === 'string') {
+                return s;
+            } else {
+                let content: string = '';
+                (new Uint8Array(s)).forEach((byte: number) => {
+                    content += String.fromCharCode(byte);
+                });
+                return content;
+            }
+        } else {
+            return '';
+        }
     }
-    delete(name: string, options: Object): Promise<void> {
-        return this.blockStackApi.deleteFile(name);
+    async delete(name: string, options?: Object): Promise<void> {
+        if (this.userSession.isUserSignedIn()) {
+            return await this.userSession.deleteFile(name);
+        } 
     }
 }

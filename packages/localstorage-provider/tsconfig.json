@@ -6,6 +6,8 @@
         "declaration": true,
         "module": "commonjs",            // specify module code generation
         "target": "es5",            // specify ECMAScript target version
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
         "lib": [
             "es2016", "dom"
         ]

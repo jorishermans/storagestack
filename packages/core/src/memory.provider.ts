@@ -11,19 +11,19 @@ export class MemoryProvider<T> implements Provider<T> {
         }
     }
 
-    set(name: string, content: T, options?: Object): Promise<string> {
+    set(name: string, content: T, options?: any): Promise<string> {
         this.memory[name] = content;
         return Promise.resolve(`${this.memory[name]}`);
     }
 
-    get(name: string, options?: Object): Promise<T> {
+    get(name: string, options?: any): Promise<T> {
         const p = new Promise<T>((resolve) => {
             resolve(this.memory[name]);
         });
         return p;
     }
 
-    delete(name: string, options?: Object): Promise<void> {
+    delete(name: string, options?: any): Promise<void> {
         delete this.memory[name];
         return Promise.resolve();
     }
