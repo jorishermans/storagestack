@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/localstorage-provider",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "LocalStorage implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.3.0",
+    "@storagestack/core": "^0.4.0",
     "localforage": "^1.7.1",
     "secure-ls": "^1.2.5"
   },
