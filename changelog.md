@@ -1,3 +1,7 @@
+## [0.4.4] - 2019-11-24
+
+- remove console.log in json middleware
+
 ## [0.4.3] - 2019-11-23
 
 - add allowSyntheticDefaultImports in blockstack-provider
