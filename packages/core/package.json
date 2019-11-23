@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/core",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "This package has the core functionality of the storage stack family",
   "main": "dist/index.js",
   "scripts": {

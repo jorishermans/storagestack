@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/json-middleware",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "To transform the data to json and from json in storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.1.6"
+    "@storagestack/core": "^0.2.0"
   },
   "author": "Joris Hermans",
   "license": "ISC",
