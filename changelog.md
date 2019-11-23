@@ -1,3 +1,7 @@
+## [0.4.3] - 2019-11-23
+
+- add allowSyntheticDefaultImports in blockstack-provider
+
 ## [0.4.2] - 2019-11-23
 
 - remove localforage as dependency
