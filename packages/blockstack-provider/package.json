@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/blockstack-provider",
-  "version": "0.4.5",
+  "version": "0.4.6",
   "description": "Blockstack implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
