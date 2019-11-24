@@ -13,19 +13,15 @@ export class BlockstackProvider implements Provider<string> {
         }
     }
     async get(name: string, options?: any): Promise<string> {
-        if (this.userSession.isUserSignedIn()) {
-            const s = await this.userSession.getFile(name, options);
-            if (typeof s === 'string') {
-                return s;
-            } else {
-                let content: string = '';
-                (new Uint8Array(s)).forEach((byte: number) => {
-                    content += String.fromCharCode(byte);
-                });
-                return content;
-            }
+        const s = await this.userSession.getFile(name, options);
+        if (typeof s === 'string') {
+            return s;
         } else {
-            return '';
+            let content: string = '';
+            (new Uint8Array(s)).forEach((byte: number) => {
+                content += String.fromCharCode(byte);
+            });
+            return content;
         }
     }
     async delete(name: string, options?: Object): Promise<void> {
