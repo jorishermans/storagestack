@@ -1,3 +1,7 @@
+## [0.4.9] - 2019-11-24
+
+- get some basic logging.
+
 ## [0.4.8] - 2019-11-24
 
 - better handling when json is not available.
