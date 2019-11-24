@@ -1,3 +1,7 @@
+## [0.4.5 - 0.4.6] - 2019-11-24
+
+- remove console.log in json middleware
+
 ## [0.4.4] - 2019-11-24
 
 - remove console.log in json middleware

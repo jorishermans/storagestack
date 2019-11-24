@@ -11,6 +11,6 @@ export class JsonMiddleware implements MiddlewareStack {
         try {
             storageInfo.content = JSON.parse(storageInfo.content);
             next();
-        } catch { console.warn('JSON middleware parse error ... ', storageInfo.origin); }
+        } catch { console.warn('JSON middleware parse error ... ', storageInfo.name, storageInfo.origin); }
     }
 }

@@ -59,3 +59,5 @@ class UpperMiddleware implements MiddlewareStack {
     }
 }
 ```
+
+! StorageStack is on heavy development to get it stable, so be aware of a lof of version updates.
