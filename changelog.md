@@ -1,3 +1,7 @@
+## [0.4.11] - 2019-11-24
+
+- make callbacks public again
+
 ## [0.4.10] - 2019-11-24
 
 - origin can be of any type in StorageInfo

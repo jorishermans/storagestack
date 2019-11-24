@@ -67,13 +67,13 @@ export class Application {
 
     get(name: string, options?: Object): Promise<StorageInfo> {
         return new Promise((resolve, reject) => {
-            this._get(name, (storageInfo: StorageInfo) => {
+            this.getCb(name, (storageInfo: StorageInfo) => {
                 resolve(storageInfo);
             }, options);
         });
     }
 
-    private _get(name: string, fn: (arg0: StorageInfo) => void, options?: Object) {
+    getCb(name: string, fn: (arg0: StorageInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).get(name, options).then(s => {
@@ -86,13 +86,13 @@ export class Application {
 
     delete(name: string, options?: Object): Promise<BasicInfo> {
         return new Promise((resolve, reject) => {
-            this._delete(name, (b: BasicInfo) => {
+            this.deleteCb(name, (b: BasicInfo) => {
                 resolve(b);
             }, options);
         });
     }
 
-    private _delete(name: string, fn: (arg0: BasicInfo) => void, options?: Object) {
+    deleteCb(name: string, fn: (arg0: BasicInfo) => void, options?: Object) {
         let listOfProviders = this.mapProvidersByName(name);
         if (listOfProviders.length > 0) {
             this.last(listOfProviders).delete(name, options).then(s => {
