@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/blockstack-provider",
-  "version": "0.4.9",
+  "version": "0.4.10",
   "description": "Blockstack implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.4.9",
+    "@storagestack/core": "^0.4.10",
     "blockstack": "^19.3.0"
   },
   "author": "Joris Hermans",
