@@ -4,7 +4,7 @@ export interface BasicInfo {
 
 export interface StorageInfo extends BasicInfo {
     content: any;
-    origin: string;
+    origin: any;
     options?: Object;
 }
 

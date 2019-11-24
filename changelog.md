@@ -1,3 +1,7 @@
+## [0.4.10] - 2019-11-24
+
+- origin can be of any type in StorageInfo
+
 ## [0.4.9] - 2019-11-24
 
 - get some basic logging.
