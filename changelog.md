@@ -1,3 +1,7 @@
+## [0.4.7] - 2019-11-24
+
+- improvements on retrieving data from userSession
+
 ## [0.4.5 - 0.4.6] - 2019-11-24
 
 - remove console.log in json middleware
