@@ -9,7 +9,7 @@ export class JsonMiddleware implements MiddlewareStack {
     
     get(storageInfo: StorageInfo, next: () => void) {
         try {
-            storageInfo.content = JSON.parse(storageInfo.content);
+            storageInfo.content = storageInfo.content !== '' ? JSON.parse(storageInfo.content) : undefined;
             next();
         } catch { console.warn('JSON middleware parse error ... ', storageInfo.name, storageInfo.origin); }
     }

@@ -26,7 +26,7 @@ export class BlockstackProvider implements Provider<string> {
             }
         }
         else {
-            return '{}';
+            return '';
         }
     }
     async delete(name: string, options?: Object): Promise<void> {

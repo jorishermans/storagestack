@@ -1,3 +1,7 @@
+## [0.4.8] - 2019-11-24
+
+- better handling when json is not available.
+
 ## [0.4.7] - 2019-11-24
 
 - improvements on retrieving data from userSession
