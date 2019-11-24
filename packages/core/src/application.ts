@@ -7,6 +7,7 @@ const minimatch = require("minimatch");
 interface PatternProvider {
     pattern: string;
     provider: Provider<any>;
+    condition: () => boolean;
 }
 
 export class Application {
@@ -26,8 +27,8 @@ export class Application {
         this._deleteMiddleware = new MiddlewareHolder();
     }
 
-    public registerProvider(provider: Provider<any>, pattern: string = '*') {
-        this._providers.push({provider: provider, pattern: pattern});
+    public registerProvider(provider: Provider<any>, pattern: string = '*', condition: () => boolean = () => true) {
+        this._providers.push({provider: provider, pattern: pattern, condition: condition});
     }
 
     public removeProvider(provider: Provider<any>) {
@@ -107,7 +108,7 @@ export class Application {
     private mapProvidersByName(name: string) {
         return this._providers.map(p => {
             let isMatch = minimatch(name, p.pattern);
-            if (isMatch) {
+            if (isMatch && p.condition()) {
                 return p.provider;
             }
         }).filter(p => p !== undefined);
