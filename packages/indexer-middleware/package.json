@@ -39,7 +39,10 @@
     "url": "git+https://github.com/jorishermans/storagestack.git"
   },
   "scripts": {
-    "test": "echo \"Error: run tests from root\" && exit 1"
+    "test": "jest",
+    "compile": "webpack",
+    "compile-test": "webpack --config webpack.config.test.js",
+    "tslint": "tslint --project src/tsconfig.json"
   },
   "bugs": {
     "url": "https://github.com/jorishermans/storagestack/issues"
