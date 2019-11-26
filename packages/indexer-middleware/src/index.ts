@@ -1,0 +1,1 @@
+export { IndexerMiddleware } from './indexer-middleware';
