@@ -1,3 +1,11 @@
+## [0.4.14] - 2019-11-29
+
+- add secure property to indexer-middleware
+
+## [0.4.11 & 0.4.12] - 2019-11-25
+
+- added package indexer-middleware
+
 ## [0.4.11 & 0.4.12] - 2019-11-24
 
 - make callbacks public again

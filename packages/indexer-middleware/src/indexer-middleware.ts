@@ -17,7 +17,7 @@ export class IndexerMiddleware<T, K> implements MiddlewareStack {
 
     constructor(private transformer: (name: string, t: T) => K,
                 private nameToId: (name: string) => string,
-                private indexName: string) {
+                private indexName: string, private secure = true) {
         this.index = {};
         this.getIndexFile().then((index) => {
             this.index = index ? index : {};
@@ -51,12 +51,12 @@ export class IndexerMiddleware<T, K> implements MiddlewareStack {
     }
 
     private updateIndex() {
-        ss.set(this.indexName, this.index);
+        ss.set(this.indexName, this.index, { encrypt: this.secure });
         this._index$.next(this.index);
     }
 
     private async getIndexFile(): Promise<HashTableIndex<K>> {
-        const s = await ss.get(this.indexName, {decrypt: true});
+        const s = await ss.get(this.indexName, {decrypt: this.secure });
         if (s) {
             return s.content;
         } else {
