@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/indexer-middleware",
-  "version": "0.4.14",
+  "version": "0.4.15",
   "description": "create an index of your data type that you want to put in storage",
   "keywords": [
     "blockstack",
