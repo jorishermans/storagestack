@@ -1,4 +1,4 @@
-## [0.4.15] - 2019-12-07
+## [0.4.16] - 2019-12-07
 
 - export HashTableIndex in indexer middleware
 
