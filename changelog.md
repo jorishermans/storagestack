@@ -1,5 +1,9 @@
 ## [0.4.15] - 2019-12-07
 
+- export HashTableIndex in indexer middleware
+
+## [0.4.15] - 2019-12-07
+
 - improvements on the indexer middleware delete method
 
 ## [0.4.14] - 2019-11-29

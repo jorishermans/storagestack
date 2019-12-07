@@ -1,1 +1,1 @@
-export { IndexerMiddleware } from './indexer-middleware';
+export { IndexerMiddleware, HashTableIndex } from './indexer-middleware';
