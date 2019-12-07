@@ -44,10 +44,12 @@ export class IndexerMiddleware<T, K> implements MiddlewareStack {
     }
 
     public delete(basicInfo: BasicInfo, next: () => void): any {
-        const id = this.nameToId(basicInfo.name);
+        if (this.indexName !== basicInfo.name) {
+            const id = this.nameToId(basicInfo.name);
 
-        delete this.index[id];
-        this.updateIndex();
+            delete this.index[id];
+            this.updateIndex();
+        }
     }
 
     private updateIndex() {
