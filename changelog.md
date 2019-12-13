@@ -1,6 +1,6 @@
 ## [0.4.17] - 2019-12-13
 
-- update ls secure package to the latest version
+- update secure-ls package to the latest version
 
 ## [0.4.16] - 2019-12-07
 
