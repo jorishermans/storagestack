@@ -16,7 +16,7 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.4.12",
-    "secure-ls": "^1.2.5"
+    "secure-ls": "^1.2.6"
   },
   "author": "Joris Hermans",
   "license": "ISC",
