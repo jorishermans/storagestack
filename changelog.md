@@ -1,3 +1,7 @@
+## [0.5.0] - 2019-12-13
+
+- remove rxjs from indexer middleware
+
 ## [0.4.17] - 2019-12-13
 
 - update secure-ls package to the latest version
