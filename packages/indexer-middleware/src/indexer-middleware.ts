@@ -1,6 +1,4 @@
 import { MiddlewareStack, StorageInfo, ss, BasicInfo } from '@storagestack/core';
-import { ReplaySubject, Observable } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
 export interface HashTableIndex<T> {
     [key: string]: T;
@@ -8,12 +6,8 @@ export interface HashTableIndex<T> {
 
 export class IndexerMiddleware<T, K> implements MiddlewareStack {
 
+    public listen!: (index: HashTableIndex<K>) => void;
     private index: HashTableIndex<K>;
-
-    private _index$: ReplaySubject<HashTableIndex<K>> = new ReplaySubject<HashTableIndex<K>>(1);
-    public get index$(): Observable<HashTableIndex<K>> {
-        return this._index$.pipe(filter((v: any) => !!v));
-    }
 
     constructor(private transformer: (name: string, t: T) => K,
                 private nameToId: (name: string) => string,
@@ -21,7 +15,7 @@ export class IndexerMiddleware<T, K> implements MiddlewareStack {
         this.index = {};
         this.getIndexFile().then((index) => {
             this.index = index ? index : {};
-            this._index$.next(index);
+            if (this.listen) { this.listen(index); }
         });
     }
 
@@ -54,7 +48,7 @@ export class IndexerMiddleware<T, K> implements MiddlewareStack {
 
     private updateIndex() {
         ss.set(this.indexName, this.index, { encrypt: this.secure });
-        this._index$.next(this.index);
+        if (this.listen) { this.listen(this.index); }
     }
 
     private async getIndexFile(): Promise<HashTableIndex<K>> {

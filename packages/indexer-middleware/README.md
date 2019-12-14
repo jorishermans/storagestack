@@ -21,3 +21,9 @@ this.indexerMiddleware = new IndexerMiddleware(transformation, nameToId, 'blog-i
 
 ss.use('blog-*', this.indexerMiddleware);
 ```
+
+When you want to listen to updates on the index you can use the following statement.
+```
+this.indexerMiddleware.listen = (index: HashTableIndex<TutrSum>) => console.log('new index', index);
+```
+

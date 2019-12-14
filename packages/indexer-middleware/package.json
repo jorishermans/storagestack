@@ -17,8 +17,7 @@
     "test": "__tests__"
   },
   "dependencies": {
-    "@storagestack/core": "^0.4.12",
-    "rxjs": "^6.5.2"
+    "@storagestack/core": "^0.4.12"
   },
   "devDependencies": {
     "ts-jest": "^22.4.2",
