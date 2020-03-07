@@ -1,3 +1,7 @@
+## [0.6.0] - 2019-03-07
+
+- remove rxjs from indexer middleware
+
 ## [0.5.0] - 2019-12-13
 
 - remove rxjs from indexer middleware

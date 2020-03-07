@@ -8,6 +8,10 @@ export class LocalStorageProvider implements Provider<string> {
 
     constructor() { }
 
+    private get browserStorage() {
+        return localStorage;
+    }
+
     async set(name: string, content: string, options?: any): Promise<string> {
         if (options && options.encrypt) {
             this.storage.set(name, content);
