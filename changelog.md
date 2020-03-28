@@ -1,3 +1,7 @@
+## [0.6.1] - 2019-03-28
+
+- check if content is of type string before parsing it into a JSON Object
+
 ## [0.6.0] - 2019-03-07
 
 - remove rxjs from indexer middleware
