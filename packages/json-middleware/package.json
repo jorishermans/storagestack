@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/json-middleware",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "To transform the data to json and from json in storage stack",
   "main": "dist/index.js",
   "scripts": {
