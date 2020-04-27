@@ -1,5 +1,6 @@
 import { Provider } from '@storagestack/core';
 import { UserSession } from 'blockstack';
+import * as blockstack from 'blockstack';
 
 export class BlockstackProvider implements Provider<string> {
 
@@ -7,7 +8,7 @@ export class BlockstackProvider implements Provider<string> {
 
     set(name: string, content: string, options?: any): Promise<string> {
         if (this.userSession.isUserSignedIn()) {
-            return this.userSession.putFile(name, content, options);
+            return blockstack.putFile(name, content, options);
         } else {
             return Promise.resolve('');
         }
@@ -15,7 +16,7 @@ export class BlockstackProvider implements Provider<string> {
 
     async get(name: string, options?: any): Promise<string> {
         if (this.userSession.isUserSignedIn() || options.username) {
-            const s = await this.userSession.getFile(name, options);
+            const s = await blockstack.getFile(name, options);
             if (typeof s === 'string') {
                 return s;
             } else {
@@ -32,7 +33,7 @@ export class BlockstackProvider implements Provider<string> {
     }
     async delete(name: string, options?: Object): Promise<void> {
         if (this.userSession.isUserSignedIn()) {
-            return await this.userSession.deleteFile(name);
+            return await blockstack.deleteFile(name);
         } 
     }
 }
