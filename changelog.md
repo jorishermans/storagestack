@@ -1,3 +1,7 @@
+## [0.6.4] - 2019-04-27
+
+- check if you are on node.js or not ...
+
 ## [0.6.3] - 2019-04-27
 
 - use blockstack directly instead of userSession for getFile, putFile, deleteFile
