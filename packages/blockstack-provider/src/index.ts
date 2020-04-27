@@ -3,7 +3,7 @@ import { UserSession } from 'blockstack';
 
 export class BlockstackProvider implements Provider<string> {
 
-    constructor(private userSession: UserSession) {  }
+    constructor(public userSession: UserSession) {  }
 
     set(name: string, content: string, options?: any): Promise<string> {
         if (this.userSession.isUserSignedIn()) {
@@ -12,6 +12,7 @@ export class BlockstackProvider implements Provider<string> {
             return Promise.resolve('');
         }
     }
+
     async get(name: string, options?: any): Promise<string> {
         if (this.userSession.isUserSignedIn() || options.username) {
             const s = await this.userSession.getFile(name, options);

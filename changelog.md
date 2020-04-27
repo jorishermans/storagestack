@@ -1,3 +1,11 @@
+## [0.6.3] - 2019-03-28
+
+- make userSession public in blockstack provider
+
+## [0.6.2] - 2019-03-28
+
+- blockstack as a peer dependency
+
 ## [0.6.1] - 2019-03-28
 
 - check if content is of type string before parsing it into a JSON Object
