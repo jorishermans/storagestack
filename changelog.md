@@ -1,8 +1,12 @@
-## [0.6.3] - 2019-03-28
+## [0.6.3] - 2019-04-27
+
+- use blockstack directly instead of userSession for getFile, putFile, deleteFile
+
+## [0.6.3] - 2019-04-27
 
 - make userSession public in blockstack provider
 
-## [0.6.2] - 2019-03-28
+## [0.6.2] - 2019-04-27
 
 - blockstack as a peer dependency
 
