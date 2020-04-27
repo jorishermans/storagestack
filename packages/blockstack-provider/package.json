@@ -19,7 +19,7 @@
     "@storagestack/core": "^0.6.0"
   },
   "peerDependencies": {
-    "blockstack": "^19.3.0"
+    "blockstack": "^19"
   },
   "author": "Joris Hermans",
   "license": "ISC",
