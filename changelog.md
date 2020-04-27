@@ -1,5 +1,9 @@
 ## [0.6.4] - 2019-04-27
 
+- revert problems with window
+
+## [0.6.4] - 2019-04-27
+
 - check if you are on node.js or not ...
 
 ## [0.6.3] - 2019-04-27
