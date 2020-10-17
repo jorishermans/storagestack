@@ -30,7 +30,11 @@ export class LocalStorageProvider implements Provider<string> {
         }
     }
 
-    delete(name: string, options?: any): Promise<void> {
-        return localStorage.removeItem(name);
+    async delete(name: string, options?: any): Promise<void> {
+        if (options && options.decrypt) {
+            return this.storage.remove(name);
+        } else {
+            return localStorage.removeItem(name);
+        }
     }
 }
