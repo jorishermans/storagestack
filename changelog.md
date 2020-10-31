@@ -1,3 +1,7 @@
+## [0.7.0] - 2020-10-31
+
+- upgrade to @stacks packages
+
 ## [0.6.5] - 2019-04-27
 
 - revert problems with window
