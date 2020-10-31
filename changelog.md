@@ -1,4 +1,4 @@
-## [0.7.0] - 2020-10-31
+## [0.7.0-alpha.0] - 2020-10-31
 
 - upgrade to @stacks packages
 
