@@ -1,7 +1,7 @@
 {
-  "name": "@storagestack/blockstack-provider",
+  "name": "@storagestack/stacks-provider",
   "version": "0.6.5",
-  "description": "Blockstack implementation as a provider for storage stack",
+  "description": "Blockstack / Stacks storage implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -11,15 +11,15 @@
   },
   "keywords": [
     "blockstack",
+    "stacks",
     "storage",
     "provider",
     "blockchain"
   ],
   "dependencies": {
+    "@stacks/auth": "^1.0.0-beta.7",
+    "@stacks/storage": "^1.0.0-beta.7",
     "@storagestack/core": "^0.6.0"
-  },
-  "peerDependencies": {
-    "blockstack": "^19"
   },
   "author": "Joris Hermans",
   "license": "ISC",
