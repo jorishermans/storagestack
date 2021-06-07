@@ -1,7 +1,7 @@
 {
-  "name": "@storagestack/ipfs-provider",
-  "version": "0.6.0",
-  "description": "IPFS implementation as a storage provider for storage stack",
+  "name": "@storagestack/webnative-provider",
+  "version": "0.7.0-alpha.0",
+  "description": "Fission webnative - implementation as a storage provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
     "test": "jest",
@@ -11,13 +11,15 @@
   },
   "keywords": [
     "ipfs",
+	"webnative",
+	"wnfs",
     "storage",
     "provider",
     "blockchain"
   ],
   "dependencies": {
     "@storagestack/core": "^0.6.0",
-    "ipfs": "0.55.3"
+    "webnative": "0.24.1"
   },
   "author": "Joris Hermans",
   "license": "ISC",
