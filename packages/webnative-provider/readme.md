@@ -2,7 +2,7 @@
 
 This is the implementation for the Webnative (WNFS) provider, so if you want to save files to ipfs you can do that with this package.
 
-More info about Webnative on the fission.codes website.
+More info about Webnative on [fission's website](http://fission.codes/).
 
 ### Provider
 
