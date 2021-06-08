@@ -8,8 +8,12 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: 'ts-loader' },
-        ]
+            {
+              test: /\.tsx?$/,
+              use: 'ts-loader',
+              exclude: /node_modules/,
+            },
+        ],
     },
     plugins: [
         new ProvidePlugin({ Reflect: 'core-js/es7/reflect' })

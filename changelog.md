@@ -1,6 +1,7 @@
 ## [0.7.0-alpha.1] - 2020-06-08
 
-- add support wnfs, webnative as a provider, update ipfs to the latest version 
+- add support wnfs, webnative as a provider, update ipfs to the latest version
+- update to typescript 4.3.2
 
 ## [0.7.0-alpha.0] - 2020-10-31
 

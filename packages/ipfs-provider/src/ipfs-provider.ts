@@ -20,7 +20,7 @@ export class IpfsProvider implements Provider<String> {
         })
     }
 
-    private write(name: string, content: string, options?: Object): Promise<string> {
+    private write(name: string, content: string, options?: any): Promise<string> {
         if (!name.startsWith('/')) name = `/${name}`;
         return new Promise((resolve, reject) => { 
                 this.ipfs.files.write(name, this.ipfs.types.Buffer.from(content, 'utf8'), options ? options : { offset: 0, create: true }, (err) => {

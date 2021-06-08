@@ -8,8 +8,16 @@ module.exports = {
     },
     module: {
         rules: [
-            { test: /\.tsx?$/, loader: 'ts-loader' },
-        ]
+            {
+              test: /\.tsx?$/,
+              use: 'ts-loader',
+              exclude: /node_modules/,
+            },
+            {
+                test: /node_modules\/vscode-/,
+                use: {loader: "umd-compat-loader"}
+            }
+        ],
     },
     plugins: [
         new ProvidePlugin({ Reflect: 'core-js/es7/reflect' })

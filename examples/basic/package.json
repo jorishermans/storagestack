@@ -22,7 +22,7 @@
   "author": "Joris Hermans",
   "license": "ISC",
   "devDependencies": {
-    "ts-loader": "^4.4.2",
+    "ts-loader": "^9.2.3",
     "webpack": "^4.10.2",
     "webpack-cli": "^3.0.8"
   }
