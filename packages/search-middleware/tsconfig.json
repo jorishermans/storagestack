@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",        // path to output directory
+        "sourceMap": true,          // allow sourcemap support
+        "strictNullChecks": true,   // enable strict null checks as a best practice
+        "declaration": true,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",            // specify ECMAScript target version
+        "lib": [
+            "es2016"
+        ]
+    },
+    "include": [
+        "./src/"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
