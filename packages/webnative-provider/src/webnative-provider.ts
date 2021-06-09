@@ -8,7 +8,9 @@ export class WebNativeProvider implements Provider<String> {
     async set(name: string, content: string, options?: any): Promise<string> {
         if (this.state && this.state.authenticated && this.state.fs) {
             const args = name.split('/');
-            const startFs = options && options.encrypt ? 'private' : 'public';
+            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
+                            options && options.encrypt ? 'private' : 'public';
+
             await this.state.fs.write(wn.path.file(startFs, ... args ), content);
             if (this.publish) { await this.state?.fs?.publish(); }
         }
@@ -18,7 +20,8 @@ export class WebNativeProvider implements Provider<String> {
     async get(name: string, options?: any): Promise<string> {
         if (this.state && this.state.authenticated && this.state.fs) {
             const args = name.split('/');
-            const startFs = options && options.encrypt ? 'private' : 'public';
+            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
+                            options && options.encrypt ? 'private' : 'public';
             const file = await this.state.fs.cat(wn.path.file(startFs, ... args ));
             return file.toString();
         }
@@ -28,7 +31,8 @@ export class WebNativeProvider implements Provider<String> {
     async delete(name: string, options?: any): Promise<void> {
         if (this.state && this.state.authenticated && this.state.fs) {
             const args = name.split('/');
-            const startFs = options && options.encrypt ? 'private' : 'public';
+            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
+                            options && options.encrypt ? 'private' : 'public';
             await this.state.fs.rm(wn.path.file(startFs, ... args ));
         }
     }
