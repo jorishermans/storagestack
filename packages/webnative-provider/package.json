@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/webnative-provider",
-  "version": "0.7.0-alpha.0",
+  "version": "0.7.0",
   "description": "Fission webnative - implementation as a storage provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.6.0",
+    "@storagestack/core": "^0.7.0",
     "webnative": "0.24.1"
   },
   "author": "Joris Hermans",
