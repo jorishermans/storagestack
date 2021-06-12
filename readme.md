@@ -26,6 +26,7 @@ ss.registerProvider(new MemoryProvider(), '*-index.json');
 Take a look in the core library to the provider interface.
 
 We have implementations for:
+- WebNative (Fission)
 - Blockstack
 - IPFS
 - Localstorage
