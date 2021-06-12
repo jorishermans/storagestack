@@ -6,6 +6,8 @@ export class SearchMiddleware implements MiddlewareStack {
 
     private textHill;
 
+    private indexName = `${this.basePath}index`;
+
     constructor(private basePath: string = '') { 
         this.textHill = new TextHill(new StorageStackStore(this.basePath));
     }
@@ -16,9 +18,11 @@ export class SearchMiddleware implements MiddlewareStack {
 
     set(storageInfo: StorageInfo, next: () => void) {
         // add content to index
-        this.textHill.feedDoc(storageInfo.name, storageInfo.content).then(_ => {
-            next();
-        });  
+        if (storageInfo.name.indexOf(this.indexName) === -1 ) {
+            this.textHill.feedDoc(storageInfo.name, storageInfo.content).then(_ => {
+                next();
+            });
+        }  
     }
     
     get(storageInfo: StorageInfo, next: () => void) {
@@ -26,10 +30,12 @@ export class SearchMiddleware implements MiddlewareStack {
     }
 
     delete?(basicInfo: BasicInfo, next: () => void) {
+        if (basicInfo.name.indexOf(this.indexName) === -1 ) {
         // remove content from index
-        this.textHill.removeDoc(basicInfo.name).then(_ => {
-            next();
-        })
+            this.textHill.removeDoc(basicInfo.name).then(_ => {
+                next();
+            });
+        }
     }
 }
 
