@@ -5,7 +5,6 @@ describe('Search Middleware', () => {
     test('should perform a basic search and can retrieve the documents that are requested with map prefix', async () => {
         let memory = {};
         
-        console.log('start test');
         ss.registerProvider(new MemoryProvider(memory));
         const searchMiddleware = new SearchMiddleware();
         ss.use('/files/*', searchMiddleware);
