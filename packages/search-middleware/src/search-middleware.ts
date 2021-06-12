@@ -6,7 +6,7 @@ export class SearchMiddleware implements MiddlewareStack {
 
     private textHill;
 
-    constructor(private basePath: string) { 
+    constructor(private basePath: string = '') { 
         this.textHill = new TextHill(new StorageStackStore(this.basePath));
     }
 

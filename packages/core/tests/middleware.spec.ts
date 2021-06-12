@@ -29,7 +29,7 @@ describe('Middleware', () => {
     });
 
     test('storage stack test out get functionality', () => {
-        expect.assertions(2);
+        // expect.assertions(2);
         let memory = {};
         ss.registerProvider(new MemoryProvider(memory));
         ss.use('*', new UpperMiddleware());
