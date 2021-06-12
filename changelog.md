@@ -1,3 +1,7 @@
+## [0.7.1] - 2020-06-12
+
+- add search middleware to storage stack, a full text search engine supporting text, json objects, ...
+
 ## [0.7.0] - 2020-06-08
 
 - add support wnfs, webnative as a provider, update ipfs to the latest version
