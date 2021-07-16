@@ -1,3 +1,9 @@
+## [0.7.2] - 2020-07-16
+
+- update webnative to version 0.26.0
+- test new compile method with webnative provider
+- add ipfs as peerDependency instead of dependency
+
 ## [0.7.1] - 2020-06-12
 
 - add search middleware to storage stack, a full text search engine supporting text, json objects, ...
