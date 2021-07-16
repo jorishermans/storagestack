@@ -16,7 +16,9 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.7.1",
+    "@storagestack/core": "^0.7.1"
+  },
+  "peerDependencies": {
     "ipfs": "0.55.3"
   },
   "author": "Joris Hermans",

@@ -4,8 +4,7 @@
   "description": "Fission webnative - implementation as a storage provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
-    "compile": "webpack",
+    "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "compile-test": "webpack --config webpack.config.test.js",
     "tslint": "tslint --project src/tsconfig.json"
   },
@@ -19,18 +18,16 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.7.1",
-    "webnative": "0.24.1"
+    "webnative": "0.26.0"
   },
   "author": "Joris Hermans",
   "license": "ISC",
   "devDependencies": {
-    "ts-jest": "^22.4.2",
-    "ts-loader": "^4.3.0",
+    "@types/jest": "^26.0.15",
+    "jest-junit": "^11.1.0",
+    "ts-jest": "^26.4.1",
     "tslint": "^5.9.1",
-    "typescript": "^4.3.2",
-    "umd-compat-loader": "^2.1.2",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^4.3.2"
   },
   "files": [
     "dist"
