@@ -13,4 +13,5 @@ yarn-error.log*
 /.changelog
 yarn.lock
 packages/**/dist/
+packages/**/lib/
 packages/**/node_modules/

@@ -2,6 +2,7 @@
 
 - use as default pattern matching ** so it supports directories
 - fix private & public folders for webnative
+- add hasProvider to the core library
 
 ## [0.7.2] - 2020-07-16
 

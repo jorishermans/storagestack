@@ -5,7 +5,7 @@
         "strict": true,                           /* Enable all strict type-checking options. */
         "esModuleInterop": true,                  /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */
         "forceConsistentCasingInFileNames": true,  /* Disallow inconsistently-cased references to the same file. */
-        "outDir": "./dist",
+        "outDir": "dist",
         "declaration": true,
         "moduleResolution": "node",
         "skipLibCheck": true
