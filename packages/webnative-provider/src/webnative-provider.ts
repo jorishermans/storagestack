@@ -7,22 +7,25 @@ export class WebNativeProvider implements Provider<String> {
 
     async set(name: string, content: string, options?: any): Promise<string> {
         if (this.state && this.state.authenticated && this.state.fs) {
-            const args = name.split('/');
-            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
-                            options && options.encrypt ? 'private' : 'public';
-
-            await this.state.fs.write(wn.path.file(startFs, ... args ), content);
-            if (this.publish) { await this.state?.fs?.publish(); }
+            let args = name.split('/');
+ 
+           if (args[0] !== 'private' && args[0] !== 'public') {
+               args = [options && options.encrypt ? 'private' : 'public', ... args];
+           }
+           await this.state.fs.write(wn.path.file( ... args ), content);
+           if (this.publish) { await this.state?.fs?.publish(); }
         }
         return name;
     }
 
     async get(name: string, options?: any): Promise<string> {
         if (this.state && this.state.authenticated && this.state.fs) {
-            const args = name.split('/');
-            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
-                            options && options.encrypt ? 'private' : 'public';
-            const file = await this.state.fs.cat(wn.path.file(startFs, ... args ));
+            let args = name.split('/');
+ 
+            if (args[0] !== 'private' && args[0] !== 'public') {
+                args = [options && options.encrypt ? 'private' : 'public', ... args];
+            }
+            const file = await this.state.fs.cat(wn.path.file( ... args ));
             return file.toString();
         }
         return '';
@@ -30,10 +33,12 @@ export class WebNativeProvider implements Provider<String> {
 
     async delete(name: string, options?: any): Promise<void> {
         if (this.state && this.state.authenticated && this.state.fs) {
-            const args = name.split('/');
-            const startFs = args[0] === 'private' || args[0] === 'public' ? '' : 
-                            options && options.encrypt ? 'private' : 'public';
-            await this.state.fs.rm(wn.path.file(startFs, ... args ));
+            let args = name.split('/');
+ 
+            if (args[0] !== 'private' && args[0] !== 'public') {
+                args = [options && options.encrypt ? 'private' : 'public', ... args];
+            }
+            await this.state.fs.rm(wn.path.file( ... args ));
         }
     }
 }
