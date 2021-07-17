@@ -17,4 +17,12 @@ describe('Providers', () => {
         ss.delete('cool');
         expect(memory['cool']).toBe(undefined);
     });
+
+    test('storage stack test out memory provider set', () => {
+        let memory = {};
+        ss.registerProvider(new MemoryProvider(memory));
+        ss.set('cool/base/file.json', 'asset');
+
+        expect(memory['cool/base/file.json']).toBe('asset');
+    });
 });

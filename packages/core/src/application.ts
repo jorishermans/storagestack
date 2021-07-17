@@ -27,7 +27,7 @@ export class Application {
         this._deleteMiddleware = new MiddlewareHolder();
     }
 
-    public registerProvider(provider: Provider<any>, pattern: string = '*', condition: () => boolean = () => true) {
+    public registerProvider(provider: Provider<any>, pattern: string = '**', condition: () => boolean = () => true) {
         this._providers.push({provider: provider, pattern: pattern, condition: condition});
     }
 
@@ -44,7 +44,7 @@ export class Application {
     }
 
     private checkRoute(pattern: string, basicInfo: BasicInfo, next: () => void, fn: (BasicInfo, Function) => void) {
-        let isMatch = minimatch(basicInfo.name, pattern);
+        let isMatch = minimatch(basicInfo.name, pattern, {dot: true});
         if (isMatch) {
             fn(basicInfo, next);
         } else {
@@ -107,8 +107,8 @@ export class Application {
 
     private mapProvidersByName(name: string) {
         return this._providers.map(p => {
-            let isMatch = minimatch(name, p.pattern);
-            // console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`);
+            let isMatch = minimatch(name, p.pattern, {dot: true});
+            console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`);
             if (isMatch && p.condition()) {
                 return p.provider;
             }

@@ -1,3 +1,8 @@
+## [0.7.3] - 2020-07-17
+
+- use as default pattern matching ** so it supports directories
+- fix private & public folders for webnative
+
 ## [0.7.2] - 2020-07-16
 
 - update webnative to version 0.26.0
