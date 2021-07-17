@@ -35,6 +35,10 @@ export class Application {
         this._providers = this._providers.filter(x => x.provider !== provider);
     }
 
+    public hasProvider(provider: Provider<any>) {
+        return this._providers.findIndex(x => x.provider !== provider) !== -1;
+    }
+
     public use(pattern: string, middleware: MiddlewareStack) {
         // route.match('/my/fancy/route/page/7')
         this._middleware.push(middleware);
