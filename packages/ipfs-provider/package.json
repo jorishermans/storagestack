@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/ipfs-provider",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "IPFS implementation as a storage provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.7.2"
+    "@storagestack/core": "^0.7.3"
   },
   "peerDependencies": {
     "ipfs": "0.55.3"

@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/search-middleware",
-  "version": "0.7.2",
+  "version": "0.7.3",
   "description": "To transform the data to json and from json in storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -16,7 +16,7 @@
     "blockchain"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.7.2",
+    "@storagestack/core": "^0.7.3",
     "@texthill/core": "^0.3.0"
   },
   "author": "Joris Hermans",
