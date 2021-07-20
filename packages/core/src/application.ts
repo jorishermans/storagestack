@@ -105,6 +105,14 @@ export class Application {
         }
     }
 
+    clear() {
+        this._providers = [];
+        this._middleware = [];
+        this._setMiddleware = new MiddlewareHolder();
+        this._getMiddleware = new MiddlewareHolder();
+        this._deleteMiddleware = new MiddlewareHolder();
+    }
+
     private last(list): Provider<any> {
         return list[list.length - 1];
     }
