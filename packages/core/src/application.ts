@@ -112,7 +112,7 @@ export class Application {
     private mapProvidersByName(name: string) {
         return this._providers.map(p => {
             let isMatch = minimatch(name, p.pattern, {dot: true});
-            console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`);
+            // console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`);
             if (isMatch && p.condition()) {
                 return p.provider;
             }
