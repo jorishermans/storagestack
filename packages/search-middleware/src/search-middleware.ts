@@ -4,7 +4,7 @@ import { TextHill } from '@texthill/core';
 
 export class SearchMiddleware implements MiddlewareStack {
 
-    private textHill;
+    private textHill: TextHill;
 
     private indexName = `${this.basePath}index`;
 
@@ -21,6 +21,9 @@ export class SearchMiddleware implements MiddlewareStack {
         if (storageInfo.name.indexOf(this.indexName) === -1 ) {
             this.textHill.feedDoc(storageInfo.name, storageInfo.content).then(_ => {
                 next();
+            }, (err) => {
+                console.error(err);
+                next();
             });
         }  
     }
@@ -33,6 +36,9 @@ export class SearchMiddleware implements MiddlewareStack {
         if (basicInfo.name.indexOf(this.indexName) === -1 ) {
         // remove content from index
             this.textHill.removeDoc(basicInfo.name).then(_ => {
+                next();
+            }, (err) => {
+                console.error(err);
                 next();
             });
         }
