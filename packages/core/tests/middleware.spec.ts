@@ -33,6 +33,9 @@ class AddMiddleware implements MiddlewareStack {
 }
 
 describe('Middleware', () => {
+    beforeEach(() => {
+        ss.clear();
+    })
     test('storage stack test out set functionality', () => {
         let memory = {};
         ss.registerProvider(new MemoryProvider(memory));
@@ -65,5 +68,20 @@ describe('Middleware', () => {
         ss.set('cool', 'asset').then(_ => console.log('cool'));
         const storageInfo: StorageInfo = await ss.get('cool');
         expect(storageInfo.content).toEqual('1 ASSET A');
+    })
+
+    test('storage stack test out 2 middlewares on different patterns', async () => {
+        // expect.assertions(2);
+        let memory = {};
+        ss.registerProvider(new MemoryProvider(memory));
+        ss.use('**', new UpperMiddleware());
+        ss.use('a/*.json', new AddMiddleware(' A'));
+        ss.set('c', 'asset');
+        const storageInfo: StorageInfo = await ss.get('c');
+        expect(storageInfo.content).toEqual('1 ASSET');
+
+        ss.set('a/b.json', 'baby');
+        const storageInfo2: StorageInfo = await ss.get('a/b.json');
+        expect(storageInfo2.content).toEqual('2 BABY A');
     })
 });
