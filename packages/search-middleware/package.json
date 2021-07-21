@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/search-middleware",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "description": "To transform the data to json and from json in storage stack",
   "main": "dist/index.js",
   "scripts": {
