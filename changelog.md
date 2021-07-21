@@ -1,6 +1,7 @@
 ## [0.7.5] - 2020-07-21
 
 - add debug option to search middleware
+- improve search middleware, add next function on every branch
 
 ## [0.7.4] - 2020-07-21
 
