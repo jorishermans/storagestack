@@ -8,6 +8,7 @@ export class StorageStackStore implements Store {
     async getItem(key: string, defaultValue?: any) {
         if (this.debugging) { console.log('StorageStack Store: [getItem] ', key, defaultValue); }
         const storageInfo = await ss.get(`${this.basePath}${key}`);
+        if (this.debugging) { console.log('StorageStack Store: [getItem Result] -> ', storageInfo); }
         return storageInfo.content ?? defaultValue;
     }
     

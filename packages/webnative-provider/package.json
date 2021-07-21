@@ -6,7 +6,6 @@
   "module": "./dist/index.js",
   "scripts": {
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
-    "compile-test": "webpack --config webpack.config.test.js",
     "tslint": "tslint --project src/tsconfig.json"
   },
   "keywords": [
