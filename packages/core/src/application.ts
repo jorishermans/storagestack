@@ -19,6 +19,8 @@ export class Application {
     private _getMiddleware: MiddlewareHolder;
     private _deleteMiddleware: MiddlewareHolder;
 
+    private debugging = false;
+
     constructor() {
         this._providers = [];
         this._middleware = [];
@@ -113,6 +115,10 @@ export class Application {
         this._deleteMiddleware = new MiddlewareHolder();
     }
 
+    setDebugging(debugging: boolean) {
+        this.debugging = debugging;
+    }
+
     private last(list): Provider<any> {
         return list[list.length - 1];
     }
@@ -120,7 +126,7 @@ export class Application {
     private mapProvidersByName(name: string) {
         return this._providers.map(p => {
             let isMatch = minimatch(name, p.pattern, {dot: true});
-            // console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`);
+            if (this.debugging) { console.log(`[Debug] map providers by ${name}: ${isMatch} - ${p.condition()}`) };
             if (isMatch && p.condition()) {
                 return p.provider;
             }
