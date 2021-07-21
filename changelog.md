@@ -1,3 +1,7 @@
+## [0.7.6] - 2020-07-21
+
+- check if file exist on webnative provider
+
 ## [0.7.5] - 2020-07-21
 
 - add debug option to search middleware

@@ -1,7 +1,7 @@
 import { Provider } from '@storagestack/core';
 import * as wn from 'webnative';
 
-export class WebNativeProvider implements Provider<String> {
+export class WebNativeProvider implements Provider<String | null> {
 
     constructor(private state: wn.State, private publish?: boolean) { }
 
@@ -18,17 +18,22 @@ export class WebNativeProvider implements Provider<String> {
         return name;
     }
 
-    async get(name: string, options?: any): Promise<string> {
+    async get(name: string, options?: any): Promise<string | null> {
         if (this.state && this.state.authenticated && this.state.fs) {
             let args = name.split('/');
  
             if (args[0] !== 'private' && args[0] !== 'public') {
                 args = [options && options.encrypt ? 'private' : 'public', ... args];
             }
-            const file = await this.state.fs.cat(wn.path.file( ... args ));
-            return file.toString();
+            const path = wn.path.file( ... args );
+            if (this.state.fs.exists(path)) {
+                const file = await this.state.fs.cat(wn.path.file( ... args ));
+                return file.toString();
+            } else {
+                return null;
+            }
         }
-        return '';
+        return null;
     }
 
     async delete(name: string, options?: any): Promise<void> {
