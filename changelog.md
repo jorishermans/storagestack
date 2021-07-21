@@ -1,3 +1,8 @@
+## [0.7.4] - 2020-07-17
+
+- use proper error handling when something went wrong in search middleware
+- add clear method in the core package, to clear providers, middleware, ...
+
 ## [0.7.3] - 2020-07-17
 
 - use as default pattern matching ** so it supports directories
