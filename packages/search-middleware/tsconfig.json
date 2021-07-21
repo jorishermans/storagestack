@@ -2,6 +2,7 @@
     "compilerOptions": {
         "outDir": "./dist/",        // path to output directory
         "sourceMap": true,          // allow sourcemap support
+        "inlineSources": true,
         "strictNullChecks": true,   // enable strict null checks as a best practice
         "declaration": true,
         "isolatedModules": true,

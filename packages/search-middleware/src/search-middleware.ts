@@ -8,8 +8,8 @@ export class SearchMiddleware implements MiddlewareStack {
 
     private indexName = `${this.basePath}index`;
 
-    constructor(private basePath: string = '') { 
-        this.textHill = new TextHill(new StorageStackStore(this.basePath));
+    constructor(private basePath: string = '', private debugging = false) { 
+        this.textHill = new TextHill(new StorageStackStore(this.basePath, this.debugging));
     }
 
     async search(text: string) {
@@ -19,13 +19,18 @@ export class SearchMiddleware implements MiddlewareStack {
     set(storageInfo: StorageInfo, next: () => void) {
         // add content to index
         if (storageInfo.name.indexOf(this.indexName) === -1 ) {
+            if (this.debugging) { console.log('Indexing of document', storageInfo.name, storageInfo.content); }
             this.textHill.feedDoc(storageInfo.name, storageInfo.content).then(_ => {
+                if (this.debugging) { console.log('Indexing done', storageInfo.name, storageInfo.content); }
                 next();
             }, (err) => {
                 console.error(err);
                 next();
             });
-        }  
+        } else {
+            if (this.debugging) { console.log('No indexing', storageInfo.name, this.indexName); }
+            next();
+        }
     }
     
     get(storageInfo: StorageInfo, next: () => void) {
@@ -35,12 +40,16 @@ export class SearchMiddleware implements MiddlewareStack {
     delete?(basicInfo: BasicInfo, next: () => void) {
         if (basicInfo.name.indexOf(this.indexName) === -1 ) {
         // remove content from index
+            if (this.debugging) { console.log('Remove Index of document', basicInfo.name); }
             this.textHill.removeDoc(basicInfo.name).then(_ => {
                 next();
             }, (err) => {
                 console.error(err);
                 next();
             });
+        } else {
+            if (this.debugging) { console.log('No removal of index file', basicInfo.name, this.indexName); }
+            next();
         }
     }
 }
