@@ -1,3 +1,7 @@
+## [0.7.8] - 2020-07-21
+
+- check if file exist
+
 ## [0.7.7] - 2020-07-21
 
 - es module setup for search middleware

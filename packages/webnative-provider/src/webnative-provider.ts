@@ -26,8 +26,9 @@ export class WebNativeProvider implements Provider<String | null> {
                 args = [options && options.encrypt ? 'private' : 'public', ... args];
             }
             const path = wn.path.file( ... args );
-            if (this.state.fs.exists(path)) {
-                const file = await this.state.fs.cat(wn.path.file( ... args ));
+            const exists = await this.state.fs.exists(path);
+            if (exists) {
+                const file = await this.state.fs.cat(path);
                 return file ? file.toString() : null;
             } else {
                 console.warn('file don\'t exist', name);
