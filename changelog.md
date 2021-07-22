@@ -1,3 +1,8 @@
+## [0.7.9] - 2020-07-22
+
+- add findMiddlewareByType to our core ss object
+- add hasMiddleware to our core ss object
+
 ## [0.7.8] - 2020-07-21
 
 - check if file exist

@@ -38,7 +38,16 @@ export class Application {
     }
 
     public hasProvider(provider: Provider<any>) {
-        return this._providers.findIndex(x => x.provider !== provider) !== -1;
+        return this._providers.findIndex(x => x.provider === provider) !== -1;
+    }
+
+    public hasMiddleware(middleware: MiddlewareStack) {
+        return this._middleware.findIndex(x => x === middleware) !== -1;
+    }
+
+    /** Has already a middleware with the same type as the one we ask for */
+    public findMiddlewareByType(middleware: MiddlewareStack) {
+        return this._middleware.find(x => x.constructor === middleware.constructor);
     }
 
     public use(pattern: string, middleware: MiddlewareStack) {

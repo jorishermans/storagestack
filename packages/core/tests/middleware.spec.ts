@@ -84,4 +84,23 @@ describe('Middleware', () => {
         const storageInfo2: StorageInfo = await ss.get('a/b.json');
         expect(storageInfo2.content).toEqual('2 BABY A');
     })
+
+    test('storage stack test out if search middleware gives you the middlewares you expect', async () => {
+        // expect.assertions(2);
+        let memory = {};
+        ss.registerProvider(new MemoryProvider(memory));
+        const upperMiddleware = new UpperMiddleware();
+        const addMiddleware = new AddMiddleware(' A');
+        const m = ss.findMiddlewareByType(upperMiddleware);
+        expect(m).toBeUndefined();
+
+        ss.use('**', upperMiddleware);
+        ss.use('a/*.json', new AddMiddleware(' A'));
+        
+        const u = ss.findMiddlewareByType(upperMiddleware);
+        expect(u).toBeDefined();
+
+        const a = ss.findMiddlewareByType(addMiddleware);
+        expect(a).toBeDefined();
+    })
 });
