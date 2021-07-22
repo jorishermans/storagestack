@@ -103,4 +103,20 @@ describe('Middleware', () => {
         const a = ss.findMiddlewareByType(addMiddleware);
         expect(a).toBeDefined();
     })
+
+    test('storage stack test out if the useOnce is working to check that a middleware is only used once', async () => {
+        // expect.assertions(2);
+        let memory = {};
+        ss.registerProvider(new MemoryProvider(memory));
+        const addMiddlewareA = new AddMiddleware(' A');
+        const addMiddlewareB = new AddMiddleware(' B');
+    
+        ss.useOnce('**', addMiddlewareA);
+        ss.useOnce('**', addMiddlewareB);
+        
+        ss.set('a/b.json', 'baby');
+
+        const storageInfo2: StorageInfo = await ss.get('a/b.json');
+        expect(storageInfo2.content).toEqual('baby A');
+    })
 });

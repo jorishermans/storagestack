@@ -50,6 +50,13 @@ export class Application {
         return this._middleware.find(x => x.constructor === middleware.constructor);
     }
 
+    public useOnce(pattern: string, middleware: MiddlewareStack) {
+        const alreadyUsed = this.findMiddlewareByType(middleware);
+        if (!alreadyUsed) {
+            this.use(pattern, middleware);
+        }
+    }
+
     public use(pattern: string, middleware: MiddlewareStack) {
         // route.match('/my/fancy/route/page/7')
         this._middleware.push(middleware);
