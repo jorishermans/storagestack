@@ -1,3 +1,7 @@
+## [0.7.10] - 2020-07-22
+
+- add useOnce, to garanty that a middleware instance of a specific class is been added only once
+
 ## [0.7.9] - 2020-07-22
 
 - add findMiddlewareByType to our core ss object
