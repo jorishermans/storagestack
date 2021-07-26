@@ -4,6 +4,17 @@
   "description": "Fission webnative - implementation as a storage provider for storage stack",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "lib/index.d.ts": [
+        "dist/index.d.ts"
+      ],
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
   "scripts": {
     "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "tslint": "tslint --project src/tsconfig.json"
@@ -30,7 +41,12 @@
     "typescript": "^4.3.2"
   },
   "files": [
-    "dist"
+    "dist",
+    "readme.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json"
   ],
   "publishConfig": {
     "access": "public"

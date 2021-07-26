@@ -1,11 +1,15 @@
 import { Provider } from '@storagestack/core';
 import * as wn from 'webnative';
 
-export class WebNativeProvider implements Provider<String | null> {
+declare type FileContentRaw = Uint8Array;
+export declare type WebFileContent = Record<string, unknown> | FileContentRaw | Blob | string | number | boolean;
+export declare type WebFileContentObject = WebFileContent | Object | null;
+
+export class WebNativeProvider implements Provider<WebFileContentObject> {
 
     constructor(private state: wn.State, private publish?: boolean) { }
 
-    async set(name: string, content: string, options?: any): Promise<string> {
+    async set(name: string, content: WebFileContent, options?: any): Promise<string> {
         if (this.state && this.state.authenticated && this.state.fs) {
             let args = name.split('/');
  
@@ -18,7 +22,7 @@ export class WebNativeProvider implements Provider<String | null> {
         return name;
     }
 
-    async get(name: string, options?: any): Promise<string | null> {
+    async get(name: string, options?: any): Promise<WebFileContentObject> {
         if (this.state && this.state.authenticated && this.state.fs) {
             let args = name.split('/');
  
@@ -29,7 +33,7 @@ export class WebNativeProvider implements Provider<String | null> {
             const exists = await this.state.fs.exists(path);
             if (exists) {
                 const file = await this.state.fs.cat(path);
-                return file ? file.toString() : null;
+                return file ? file.valueOf() : null;
             } else {
                 console.warn('file don\'t exist', name);
                 return null;
