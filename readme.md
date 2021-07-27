@@ -61,6 +61,4 @@ class UpperMiddleware implements MiddlewareStack {
 }
 ```
 
-#### more info
-
-(guilde)[https://jorishermans.gitbook.io/storagestack/]
+You can always read more in the online [guide](https://jorishermans.gitbook.io/storagestack/)
