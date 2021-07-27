@@ -60,3 +60,7 @@ class UpperMiddleware implements MiddlewareStack {
     }
 }
 ```
+
+#### more info
+
+(guilde)[https://jorishermans.gitbook.io/storagestack/]
