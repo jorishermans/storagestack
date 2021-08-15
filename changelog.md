@@ -1,5 +1,9 @@
 ## [0.7.11] - 2020-07-26
 
+- update version webnative
+
+## [0.7.11] - 2020-07-26
+
 - use valueOf when returning an object of WebNative
 
 ## [0.7.10] - 2020-07-22
