@@ -1,4 +1,4 @@
-## [0.7.13] - 2020-08-17
+## [0.7.14] - 2020-08-16
 
 - get the imports of the logging middleware correct
 - update setup typescript
