@@ -1,3 +1,13 @@
+## [0.7.13] - 2020-08-17
+
+- get the imports of the logging middleware correct
+- update setup typescript
+
+## [0.7.13] - 2020-08-16
+
+- get the imports of the search middleware & webnative provider correct
+- update setup typescript
+
 ## [0.7.12] - 2020-08-15
 
 - update version webnative
