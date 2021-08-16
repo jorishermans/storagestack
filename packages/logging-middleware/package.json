@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/logging-middleware",
-  "version": "0.7.10",
+  "version": "0.7.14",
   "description": "Add logging for every operation in our storage stack",
   "main": "./dist/cjs/index.js",
   "module": "./dist/index.js",
