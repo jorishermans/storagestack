@@ -1,3 +1,7 @@
+## [0.7.15] - 2020-08-16
+
+- update webnative to the latest 0.27.0 version
+
 ## [0.7.14] - 2020-08-16
 
 - get the imports of the logging middleware correct
