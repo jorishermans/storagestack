@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/webnative-provider",
-  "version": "0.7.13",
+  "version": "0.7.15",
   "description": "Fission webnative - implementation as a storage provider for storage stack",
   "type": "module",
   "main": "dist/cjs/index.js",
