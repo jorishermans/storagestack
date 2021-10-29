@@ -1,3 +1,8 @@
+## [0.7.16] - 2020-10-29
+
+- update webnative to the latest 0.29.1 version
+
+
 ## [0.7.15] - 2020-08-16
 
 - update webnative to the latest 0.27.0 version
