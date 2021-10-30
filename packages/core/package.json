@@ -8,6 +8,16 @@
     "compile": "webpack",
     "tslint": "tslint --project src/tsconfig.json"
   },
+  "typesVersions": {
+    "*": {
+      "dist/index.d.ts": [
+        "dist/index.d.ts"
+      ],
+      "*": [
+        "dist/*"
+      ]
+    }
+  },
   "keywords": [
     "blockstack",
     "storage",
