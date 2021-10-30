@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/localstorage-provider",
-  "version": "0.7.16",
+  "version": "0.7.17",
   "description": "LocalStorage implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -15,7 +15,7 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.7.10",
+    "@storagestack/core": "^0.7.17",
     "secure-ls": "^1.2.6"
   },
   "author": "Joris Hermans",

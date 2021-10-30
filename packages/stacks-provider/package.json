@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/stacks-provider",
-  "version": "0.7.16",
+  "version": "0.7.17",
   "description": "Blockstack / Stacks storage implementation as a provider for storage stack",
   "main": "dist/index.js",
   "scripts": {
@@ -19,7 +19,7 @@
   "dependencies": {
     "@stacks/auth": "^1.0.0-beta.7",
     "@stacks/storage": "^1.0.0-beta.7",
-    "@storagestack/core": "^0.7.10"
+    "@storagestack/core": "^0.7.17"
   },
   "author": "Joris Hermans",
   "license": "ISC",
