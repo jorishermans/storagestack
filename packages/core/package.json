@@ -2,10 +2,13 @@
   "name": "@storagestack/core",
   "version": "0.7.17",
   "description": "This package has the core functionality of the storage stack family",
-  "main": "dist/index.js",
+  "type": "module",
+  "main": "dist/cjs/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "npx jest --runInBand --detectOpenHandles --colors --verbose --reporters=default",
-    "compile": "webpack",
+    "compile": "tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
     "tslint": "tslint --project src/tsconfig.json"
   },
   "typesVersions": {
@@ -42,12 +45,15 @@
     "ts-jest": "^27.0.0-next.12",
     "ts-loader": "4.3.0",
     "tslint": "^5.9.1",
-    "typescript": "^4.3.2",
-    "webpack": "^4.46.0",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^4.3.2"
   },
   "files": [
-    "dist"
+    "dist/",
+    "readme.md",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE",
+    "package.json"
   ],
   "publishConfig": {
     "access": "public"

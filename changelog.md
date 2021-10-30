@@ -1,7 +1,16 @@
-## [0.7.16] - 2020-10-29
+## [0.8.0-alpha.0] - 2020-10-30
+
+- remove webpack from core / json-middleware / localstorage-provider
+
+## [0.7.17] - 2020-10-29
 
 - update webnative to the latest 0.29.1 version
+- a minor update for core package
 
+## [0.7.17] - 2020-10-29
+
+- update webnative to the latest 0.29.1 version
+- a minor update for core package
 
 ## [0.7.15] - 2020-08-16
 
