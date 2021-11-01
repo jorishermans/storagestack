@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/localstorage-provider",
-  "version": "0.8.0-alpha.0",
+  "version": "0.8.0-alpha.1",
   "description": "LocalStorage implementation as a provider for storage stack",
   "type": "module",
   "main": "dist/cjs/index.js",
@@ -27,7 +27,7 @@
     "provider"
   ],
   "dependencies": {
-    "@storagestack/core": "^0.8.0-alpha.0",
+    "@storagestack/core": "^0.8.0-alpha.1",
     "secure-ls": "^1.2.6"
   },
   "author": "Joris Hermans",
