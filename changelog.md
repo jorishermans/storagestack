@@ -1,4 +1,4 @@
-## [0.8.0-alpha.0] - 2020-10-30
+## [0.8.0-alpha.0] - 2020-11-01
 
 - remove webpack from core / json-middleware / localstorage-provider
 

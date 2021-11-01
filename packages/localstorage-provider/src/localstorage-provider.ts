@@ -1,4 +1,3 @@
-declare var localStorage;
 import { Provider } from '@storagestack/core';
 import SecureLS from 'secure-ls';
 
@@ -17,7 +16,8 @@ export class LocalStorageProvider implements Provider<string> {
             this.storage.set(name, content);
             return '';
         } else {
-            return await localStorage.setItem(name, content);
+            await localStorage.setItem(name, content);
+            return content;
         }
     }
 
@@ -26,7 +26,8 @@ export class LocalStorageProvider implements Provider<string> {
             const item = this.storage.get(name);
             return item;
         } else {
-            return await localStorage.getItem(name);
+            const result = await localStorage.getItem(name);
+            return result ? result : '';
         }
     }
 

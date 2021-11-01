@@ -1,8 +1,8 @@
-declare var require;
 import { Provider } from "./provider";
 import { MiddlewareStack } from "./middleware-stack";
 import { MiddlewareHolder, StorageInfo, BasicInfo } from "./middleware-holder";
-const minimatch = require("minimatch");
+//const minimatch = require("minimatch");
+import minimatch from 'minimatch';
 
 interface PatternProvider {
     pattern: string;
@@ -65,7 +65,7 @@ export class Application {
         this._deleteMiddleware.use((bi: BasicInfo, next: () => void) => this.checkRoute(pattern, bi, next, (bi, next) => middleware.delete ? middleware.delete(bi, next) : next()));
     }
 
-    private checkRoute(pattern: string, basicInfo: BasicInfo, next: () => void, fn: (BasicInfo, Function) => void) {
+    private checkRoute(pattern: string, basicInfo: BasicInfo, next: () => void, fn: (BasicInfo: any, Function: () => void) => void) {
         let isMatch = minimatch(basicInfo.name, pattern, {dot: true});
         if (isMatch) {
             fn(basicInfo, next);
@@ -74,8 +74,8 @@ export class Application {
         }
     }
 
-    set(name: string, content: any, options?: Object): Promise<void> {
-        let promise;
+    set(name: string, content: any, options?: Object): Promise<string[]> {
+        let promise: Promise<string[]> = Promise.resolve([]);
         this._setMiddleware.go({origin: content, content: content, name: name, options: options}, (storageInfo: StorageInfo) => {
             // apply this to the providers
             let promises: Promise<string>[] = [];
@@ -135,7 +135,7 @@ export class Application {
         this.debugging = debugging;
     }
 
-    private last(list): Provider<any> {
+    private last(list: any[]): Provider<any> {
         return list[list.length - 1];
     }
 
