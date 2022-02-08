@@ -30,7 +30,7 @@
   ],
   "dependencies": {
     "@storagestack/core": "^0.8.0-alpha.1",
-    "webnative": "0.29.1"
+    "webnative": "^0.31.1"
   },
   "author": "Joris Hermans",
   "license": "ISC",
