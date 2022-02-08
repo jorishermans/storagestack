@@ -1,6 +1,6 @@
 {
   "name": "@storagestack/json-middleware",
-  "version": "0.8.0-alpha.1",
+  "version": "0.8.0-alpha.2",
   "description": "To transform the data to json and from json in storage stack",
   "type": "module",
   "main": "dist/cjs/index.js",
