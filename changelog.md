@@ -1,4 +1,4 @@
-## [0.8.1] - 2022-11-01
+## [0.8.0-alpha.2] - 2022-11-01
 
 - update all packages as stable
 - update webnative to the latest 0.31.1
