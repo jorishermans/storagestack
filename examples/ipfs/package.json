@@ -18,7 +18,7 @@
     "@storagestack/core": "^0.1.6",
     "@storagestack/ipfs-provider": "^0.1.6",
     "@storagestack/json-middleware": "^0.1.6",
-    "ipfs": "0.30.0"
+    "ipfs": "0.65.0"
   },
   "author": "Joris Hermans",
   "license": "ISC",
